@@ -1,98 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONVO_POST</title>
+    <title>Romi Token To Group Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        /* CSS for styling elements */
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-        h1{
-            text-align: center;
-            font-family: cursive;
-            font-size: 19px;
-        }
-        .btn, input {
-            height: 40px;
-            width: 100%;
-            margin-top: 20px;
-            background-color: green;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        input {
-            background: none;
-            outline: none;
-            border: 2px solid white;
-            color: white;
-            padding: 10px;
-            background-color: transparent;
-        }
-        h2{
-            text-align: center;
-            font-size: 15px;
-            color: white;
-        }
-        label{
-            color: white;
-        }
-        body{
-            background-image: url('https://i.ibb.co/M2yvygG/1737987000298.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center; /* Center the background image */
-            background-attachment: fixed; /* Keep the background fixed on scroll */
-            color: white;
-            height: 100vh;
-            margin: 0;
+        /* Neon Theme */
+        body {
+            background-color: #0d0d0d;
+            color: #fff;
+            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
+        
         .container {
-            max-width: 350px;
-            width: 100%;
-            border-radius: 20px;
+            max-width: 400px;
             padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 15px white;
-            border: none;
-            resize: none;
-            background: rgba(0, 0, 0, 0.5);
+            background: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.3);
         }
-        .footer {
+        
+        h3 {
             text-align: center;
-            margin-top: 20px;
-            color: #888;
+            font-size: 2em;
+            color: #00e0e0;
+            text-shadow: 0px 0px 10px #00e0e0;
+            margin-bottom: 1.5em;
+        }
+        
+        .form-group label {
+            color: #00e0e0;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #00e0e0;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 255, 255, 0.5);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0px 0px 15px #00e0e0;
+            border-color: #00e0e0;
+        }
+        
+        .btn-neon {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            color: #0d0d0d;
+            font-weight: bold;
+            background: #00e0e0;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0px 0px 10px #00e0e0, 0px 0px 20px #00e0e0, 0px 0px 30px #00e0e0;
+            transition: all 0.3s ease-in-out;
+            margin-top: 1em;
+        }
+        
+        .btn-neon:hover {
+            color: #fff;
+            background: #00a0a0;
+            box-shadow: 0px 0px 20px #00e0e0, 0px 0px 30px #00e0e0, 0px 0px 40px #00e0e0;
+            transform: translateY(-2px);
+        }
+        
+        .card {
+            background-color: #151515;
+            border: none;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.1);
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Facebook Token Checker Rehman Don</h1>
-    <form method="post">
-        <input type="text" name="access_token" placeholder="Input_Token" required>
-        <button class="btn" type="submit">CHECK TOKEN</button>
-    </form>
-    
-    {% if error_message %}
-        <p class="error">{{ error_message }}</p>
-    {% elif profile_name %}
-        <p>Your Profile Name: {{ profile_name }}</p>
-    {% endif %}
-    
-    <footer>
-        <h2>ᴍᴀᴅᴇ ʙʏ Rehmen</h2>
-    </footer>
-</div>
-
+    <div class="container">
+        <h3>Romi Facebook Data</h3>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center" style="color: #00e0e0; text-shadow: 0px 0px 10px #00e0e0;">Extractor</h2>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="token">Paste Your Token:</label>
+                        <input type="text" class="form-control" id="token" name="token" required>
+                    </div>
+                    <button type="submit" class="btn btn-neon">Get Data</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
